@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Best Friend Day 💕</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap');
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to top, #1e3c72, #2a5298);
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 40px 20px;
+      position: relative;
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+    }
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      transform: rotate(45deg);
+      animation: float 7s infinite ease-in;
+      opacity: 0.7;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px; left: 0;
+    }
+    .heart::after {
+      top: 0; left: -10px;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-600px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+    .message {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 15px;
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+    .friend-photo {
+      margin: 30px 0;
+    }
+    .friend-photo img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid white;
+      box-shadow: 0 0 20px pink;
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+    @media(max-width: 600px) {
+      h1 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts"></div>
+  <div class="container">
+    <h1>Happy National Best Friend Day 💖</h1>
+    <h2>2.9 Years of Unbreakable Bond 🌍💌</h2>
+    <div class="friend-photo">
+      <img src="shraddha.jpg" alt="Us" />
+    </div>
+    <div class="message">
+      <p>
+        Even with miles between us, you've never felt far from my heart. 💫<br>
+        Through late-night calls, endless laughter, and unspoken understanding,<br>
+        we’ve created a friendship that distance can never break. <br><br>
+        Today, on Best Friend Day, I just want to say...<br>
+        I’m grateful for **every second of our 2.9 years together.**<br>
+        Here's to many more beautiful memories to come. 💕<br><br>
+        I miss you—and love you more than words can ever say. 💌
+      </p>
+    </div>
+    <div class="footer">
+      From me to you — forever your best friend 💫
+    </div>
+  </div>
+
+  <script>
+    const heartContainer = document.querySelector('.hearts');
+    for (let i = 0; i < 40; i++) {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = `${Math.random() * 100}%`;
+      heart.style.animationDelay = `${Math.random() * 5}s`;
+      heart.style.animationDuration = `${4 + Math.random() * 3}s`;
+      heartContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
